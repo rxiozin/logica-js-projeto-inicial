@@ -3,13 +3,28 @@ alert(`Seja Bem vindo ao Jogo do número secreto malvadeza do ${Dono}`);
 let SecretNumber = 14;
 let chute = prompt("Choose a number between 1 and 20");
 
-// if the shoot is equal to the secret number
-if (chute == SecretNumber) {
-  alert(`You the guy! You Found the ${SecretNumber}`);
-} else {
-  if (SecretNumber > chute) {
-    alert("O numero secreto é maior do que esse que você escolheu");
+  // if the shoot is equal to the secret number
+  if (chute == SecretNumber) {
+    break;
   } else {
-    alert("O numero secreto é menor do que esse que você escolheu");
+    if (SecretNumber > chute) {
+      alert(`O numero secreto é maior que ${chute}`);
+    } else {
+      alert(`O numero secreto é menor que ${chute}`);
+    }
+    // tentativas = tentativas + 1
+    tentativas++;
   }
+}
+
+let palavraTentativa = tentativas > 1 ? "tentavivas" : "tentativa";
+
+ if (tentativas > 1) {
+  alert(
+    `Isso aí! Você descobriu o ${SecretNumber} com ${tentativas} tentativas`
+  );
+} else {
+  alert(
+    `Isso aí, Você descobriu o ${SecretNumber} com ${tentativas} tentativa`
+  );
 }
